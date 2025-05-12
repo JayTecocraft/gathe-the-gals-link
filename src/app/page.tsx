@@ -2,42 +2,26 @@ import { FreeTrialBanner } from "@/components/FreeTrial";
 import LinkCard from "@/components/LinkCard";
 import Image from "next/image";
 import { CgShoppingCart } from "react-icons/cg";
-import { FaBookOpen, FaHeadphones, FaInstagram, FaMailchimp, FaTiktok } from "react-icons/fa";
+import {
+  FaBookOpen,
+  FaHeadphones,
+  FaInstagram,
+  FaMailchimp,
+  FaTiktok,
+} from "react-icons/fa";
 import { FaGlobe } from "react-icons/fa6";
 import { GrSpotify } from "react-icons/gr";
 import { MdEmail } from "react-icons/md";
 import { PiBroadcast } from "react-icons/pi";
+import gether_image from "../images/photos/gether_image.jpeg";
 
 export default function Home() {
   const linksData = [
     {
-      title: "Instagram",
-      link: "https://www.instagram.com/Gatherthegals",
-      description: "",
-      icon: FaInstagram,
-    },
-    {
-      title: "TikTok",
-      link: "https://www.tiktok.com/@Gatherthegals",
-      description: "",
-      icon: FaTiktok,
-    },
-    {
-      title: "Email",
-      link: "mailto:Gatherthegals@gmail.com",
-      description: "",
-      icon: MdEmail,
-    },
-    {
-      title: "Spotify",
-      link: "https://open.spotify.com/show/7be7rblbyTDwrS8KMwSY2l?si=sEwyGztvSc2FS-Xt54P5Tw",
-      description: "",
-      icon: GrSpotify,
-    },
-    {
       title: "Listen to the podcast! :)",
       link: "https://podcasts.apple.com/us/podcast/gather-the-gals-christian-women-bible-study-community/id1666097684",
-      description: "We would love your support! Leave a review and share with a friend!",
+      description:
+        "We would love your support! Leave a review and share with a friend!",
       icon: PiBroadcast,
     },
     {
@@ -66,10 +50,44 @@ export default function Home() {
     },
   ];
 
+  const socialLinks = [
+    {
+      title: "Instagram",
+      link: "https://www.instagram.com/Gatherthegals",
+      description: "",
+      icon: FaInstagram,
+    },
+    {
+      title: "TikTok",
+      link: "https://www.tiktok.com/@Gatherthegals",
+      description: "",
+      icon: FaTiktok,
+    },
+    {
+      title: "Email",
+      link: "mailto:Gatherthegals@gmail.com",
+      description: "",
+      icon: MdEmail,
+    },
+    {
+      title: "Spotify",
+      link: "https://open.spotify.com/show/7be7rblbyTDwrS8KMwSY2l?si=sEwyGztvSc2FS-Xt54P5Tw",
+      description: "",
+      icon: GrSpotify,
+    },
+  ];
+
   return (
     <div className="flex flex-col min-h-screen bg-light-pink">
       <main className="relative flex flex-col h-full w-full max-w-2xl mx-auto items-center justify-start px-4 pt-8 pb-16 mb-5">
         <div className="text-center mb-8">
+          <Image
+            src={gether_image.src}
+            width="300"
+            height="400"
+            className="mx-auto !h-[300px] mb-5 border-pink-400 border-2 rounded-2xl"
+            alt="Gather the Gals"
+          />
           <h1 className="text-4xl font-bold text-pink-500 mb-3">
             Gather the Gals
           </h1>
@@ -78,13 +96,26 @@ export default function Home() {
             ministry!"
           </p>
         </div>
+        <div className="flex gap-5 w-full justify-center mb-8 mx-auto">
+          {socialLinks.map((link, index) => (
+            <a
+              key={index}
+              href={link.link}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-2 p-4 bg-white rounded-full shadow-md hover:shadow-lg transition-shadow duration-300"
+            >
+              <link.icon className="text-2xl text-pink-500" />
+            </a>
+          ))}
+        </div>
         <div className="flex flex-col gap-5 w-full">
           {linksData.map((link, index) => (
             <LinkCard key={index} {...link} />
           ))}
         </div>
       </main>
-      <FreeTrialBanner/>
+      <FreeTrialBanner />
     </div>
   );
 }
