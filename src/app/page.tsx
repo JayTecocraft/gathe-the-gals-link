@@ -78,25 +78,34 @@ export default function Home() {
   ];
 
   return (
-    <div className="flex flex-col min-h-screen bg-light-pink">
-      <main className="relative flex flex-col h-full w-full max-w-2xl mx-auto items-center justify-start px-4 pt-8 pb-16 mb-5">
-        <div className="text-center mb-8">
-          <Image
-            src={gether_image.src}
-            width="300"
-            height="400"
-            className="mx-auto !h-[300px] mb-5 border-pink-400 border-2 rounded-2xl"
-            alt="Gather the Gals"
-          />
-          <h1 className="text-4xl font-bold text-pink-500 mb-3">
+    <div className="flex flex-col min-h-screen bg-pink-200">
+      <main className="relative flex flex-col h-full w-full max-w-2xl mx-auto items-center justify-start sm:pt-8 pb-16 mb-5">
+        <div className="text-center mb-8 ">
+          <div className="relative">
+            <div
+              className="absolute sm:hidden h-[20dvh] -bottom-1 inset-x-0 bg-gradient-to-b from-transparent via-transparent to-[#fccee8] z-10 pointer-events-none"
+              style={{
+                background:
+                  "linear-gradient(to bottom, rgba(255, 237, 251, 0) 0%, #fccee8 50%, #fccee8 75%, #fccee8 100%)",
+              }}
+            />
+            <div className="h-[55dvh] sm:h-64 md:h-72 sm:w-40 md:w-64 sm:mt-12 mx-auto">
+              <img
+                src={gether_image.src}
+                className="w-full h-full object-fill sm:border-2 border-pink-400 sm:rounded-3xl object-center"
+                alt="Gather the Gals"
+              />
+            </div>
+          </div>
+          <h1 className="text-4xl font-bold text-pink-500 mb-3 -mt-16 sm:mt-6 z-10 relative px-4">
             Gather the Gals
           </h1>
-          <p className="text-lg text-pink-500 opacity-90 italic">
+          <p className="text-lg text-pink-500 opacity-90 italic z-10 relative px-4">
             "Gather the gals is a global top Christian women’s podcast and
             ministry!"
           </p>
         </div>
-        <div className="flex gap-5 w-full justify-center mb-8 mx-auto">
+        <div className="flex gap-5 w-full justify-center mb-8 mx-auto px-4">
           {socialLinks.map((link, index) => (
             <a
               key={index}
@@ -109,7 +118,7 @@ export default function Home() {
             </a>
           ))}
         </div>
-        <div className="flex flex-col gap-5 w-full">
+        <div className="flex flex-col gap-5 w-full px-4">
           {linksData.map((link, index) => (
             <LinkCard key={index} {...link} />
           ))}

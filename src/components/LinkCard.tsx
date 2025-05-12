@@ -12,7 +12,7 @@ const LinkCard: React.FC<LinkCardProps> = (item) => {
     <a
       href={item.link}
       target="_blank"
-      className="flex group items-center w-full p-4 transition-all duration-300 rounded-lg backdrop-blur-md bg-white shadow-md hover:bg-pink-50 hover:shadow-lg hover:transform hover:scale-105"
+      className="flex group items-center w-full p-4 transition-all duration-300 rounded-xl shadow-lg bg-white/10 border border-white/30 backdrop-blur-md hover:bg-pink-100/20 hover:shadow-pink-200 hover:scale-105"
     >
       {item.icon && (
         <div className="flex items-center justify-center w-10 h-10 mr-3 rounded-full text-white transition-all duration-300 bg-pink-500 group-hover:bg-gradient-to-r group-hover:from-pink-400 group-hover:to-pink-600">
