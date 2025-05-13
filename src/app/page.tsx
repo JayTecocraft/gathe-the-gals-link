@@ -89,7 +89,7 @@ export default function Home() {
                   "linear-gradient(to bottom, rgba(255, 237, 251, 0) 0%, #fccee8 50%, #fccee8 75%, #fccee8 100%)",
               }}
             />
-            <div className="h-[55dvh] sm:h-64 md:h-72 sm:w-40 md:w-64 sm:mt-12 mx-auto">
+            <div className=" sm:w-64 md:w-64 sm:mt-12 mx-auto">
               <img
                 src={gether_image.src}
                 className="w-full h-full object-fill sm:border-2 border-pink-400 sm:rounded-3xl object-center"
